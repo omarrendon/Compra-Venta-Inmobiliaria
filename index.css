@@ -15,14 +15,14 @@ a {
   height: 100vh;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 90px auto;
+  grid-template-columns: minmax(90px, 90px) auto;
   grid-template-rows: 80px auto;
   grid-template-areas: "header  header"
                         "menu   contenido";
   transition: all .3s ease;
 }
 .container.active{
-  grid-template-columns: 315px auto;
+  grid-template-columns: minmax(330px, 18%);
 }
 /* HEADER */
 .header {
@@ -144,3 +144,9 @@ a {
   grid-area: contenido;
   background: #ffffff;
 }
+/* MEDIA QUERYS */
+/* @media screen and (max-widht: 992px) {
+  .container.active{
+    grid-template-columns: minmax(330px, 18%);
+  }
+} */

@@ -5,7 +5,7 @@ document.querySelector('#btn-menu').addEventListener('click', () => {
 });
 
 const comprobarAncho = () => {
-	if(window.innerWidth <= 768){
+	if(window.innerWidth <= 1024){
 		contenedor.classList.remove('active');
 	} else {
 		contenedor.classList.add('active');
