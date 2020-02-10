@@ -144,9 +144,25 @@ a {
   grid-area: contenido;
   background: #ffffff;
 }
-/* MEDIA QUERYS */
-/* @media screen and (max-widht: 992px) {
-  .container.active{
-    grid-template-columns: minmax(330px, 18%);
-  }
-} */
+/* TABLAS ESTILOS */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* COMPRADORES */
+
+.form.form-active {
+  display: none;
+}
