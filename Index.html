@@ -32,13 +32,40 @@
             <hr>
             <a href="#" id="btn-compradores"><i class="fas fa-wallet"></i>Compradores</a>
             <hr>
-            <a href="#"><i class="fas fa-users"></i>Vendedores</a>
+            <a href="#" id="btn-vendedores"><i class="fas fa-users"></i>Vendedores</a>
             <hr>
             <a href="#"><i class="fas fa-book-open"></i>Reportes Mensuales</a>
             <hr>
             <a href="#"><i class="fas fa-money-check-alt"></i>Pagos Mensuales</a>
         </nav>
         <main class="main">
+
+            <div class="compraVenta">
+
+                <div class="compra">
+                    <div class="card">
+                        <div class="imagen">
+                            <i class="fas fa-shopping-cart compraLogo"></i>
+                        </div>
+                        <div class="titulo">
+                            COMPRAS
+                        </div>
+                        <button class="btn-compraVentas">Ver</button>
+                    </div>
+                </div>
+
+                <div class="venta">
+                    <div class="card">
+                        <div class="imagen">
+                            <i class="fas fa-wallet compraLogo"></i>
+                        </div>
+                        <div class="titulo">
+                            VENTAS
+                        </div>
+                        <button class="btn-compraVentas">Ver</button>
+                    </div>
+                </div>
+            </div>
 
             <div class="compradores compradores-active" id="compradores">
                 <h1 class="titulo-compradores">COMPRADORES </h1>
@@ -71,11 +98,11 @@
 
             <div class="vendedores vendedores-active" id="vendedores">
                 <h1 class="titulo-vendedor">VENDEDORES </h1>
-                
+
                 <hr>
-                
+
                 <button class="btn-addVendedores" id="btn-addVendedores">Agregar Nuevo</button>
-                
+
                 <form action="" class="formVendedor formVendedor-active" id="formVendedor">
                     <input type="text" placeholder="Nombre(s)" id="nombreVendedor">
                     <input type="text" placeholder="Apellidos" id="apellidoVendedor">
