@@ -30,7 +30,7 @@
         <nav class="menu">
             <a href="#"><i class="fas fa-shopping-cart"></i>Compra/Venta de Propiedades</a>
             <hr>
-            <a href="#"><i class="fas fa-wallet"></i>Compradores</a>
+            <a href="#" id="btn-compradores"><i class="fas fa-wallet"></i>Compradores</a>
             <hr>
             <a href="#"><i class="fas fa-users"></i>Vendedores</a>
             <hr>
@@ -39,35 +39,70 @@
             <a href="#"><i class="fas fa-money-check-alt"></i>Pagos Mensuales</a>
         </nav>
         <main class="main">
-            <h1>COMPRADORES </h1>
 
-            <button class="btn-add" id="btn-add">Agregar Nuevo</button>
-            
-            <form action="" class="form form-active" id="form">
-                <input type="text" placeholder="Nombre(s)">
-                <input type="text" placeholder="Apellidos">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Telefeno">
-                <button>Agregar</button>
-            </form>
-            
-            <table>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                </tr>
-                <tr>
-                    <td>Omar</td>
-                    <td>Cruz Rendón</td>
-                    <td>omarcr.96@gmail.com</td>
-                    <td>9514082455</td>
-                </tr>
-            </table>
+            <div class="compradores compradores-active" id="compradores">
+                <h1 class="titulo-compradores">COMPRADORES </h1>
+                <hr>
+                <button class="btn-add" id="btn-add">Agregar Nuevo</button>
+
+                <form action="" class="form form-active" id="form">
+                    <input type="text" placeholder="Nombre(s)" id="nombre">
+                    <input type="text" placeholder="Apellidos" id="apellido">
+                    <input type="email" placeholder="Email" id="email">
+                    <input type="text" placeholder="Telefeno" id="telefono">
+                    <button type="submit" id="btn-agregarComprador" class="btn-agregarComprador">Guardar</button>
+                </form>
+                <hr>
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                    </tr>
+                    <tr>
+                        <td>Omar</td>
+                        <td>Cruz Rendón</td>
+                        <td>omarcr.96@gmail.com</td>
+                        <td>9514082455</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="vendedores vendedores-active" id="vendedores">
+                <h1 class="titulo-vendedor">VENDEDORES </h1>
+                
+                <hr>
+                
+                <button class="btn-addVendedores" id="btn-addVendedores">Agregar Nuevo</button>
+                
+                <form action="" class="formVendedor formVendedor-active" id="formVendedor">
+                    <input type="text" placeholder="Nombre(s)" id="nombreVendedor">
+                    <input type="text" placeholder="Apellidos" id="apellidoVendedor">
+                    <input type="email" placeholder="Email" id="emailVendedor">
+                    <input type="text" placeholder="Telefeno" id="telefonoVendedor">
+                    <button type="submit" id="btn-agregarVendedor" class="btn-agregarVendedor">Guardar</button>
+                </form>
+                <hr>
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                    </tr>
+                    <tr>
+                        <td>Omar</td>
+                        <td>Cruz Rendón</td>
+                        <td>omarcr.96@gmail.com</td>
+                        <td>9514082455</td>
+                    </tr>
+                </table>
+            </div>
         </main>
     </div>
     <script src="https://kit.fontawesome.com/80ea51dd3a.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
+
 </html>

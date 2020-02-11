@@ -139,16 +139,20 @@ a {
   border: 1px solid #dfdfdf
 }
 
-/* CONTENIDO PRINCIPAL */
-.main{
-  grid-area: contenido;
-  background: #ffffff;
+/* COMPRADORES */
+/* TABLAS COMPRADORES */
+
+.compradores {
+  display: grid;
 }
-/* TABLAS ESTILOS */
+.compradores.compradores-active {
+  display: none;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 70%;
+  margin-left: 150px;
 }
 
 td, th {
@@ -161,7 +165,96 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-/* COMPRADORES */
+/* */
+.titulo-compradores {
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  padding: 40px 0px;
+  letter-spacing: 10px;
+  font-size: 50px;
+  color: #296073;
+}
+hr {
+  margin: 20px 0;
+  border: 1px solid #008E9B;
+}
+.form.form-active {
+  display: none;
+}
+.btn-add{
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
+  background: #0089BA;
+  color: #ffffff;
+  font-size: 20px;
+}
+.btn-add:hover {
+  background: #00C9A7;
+}
+.form {
+  padding: 50px;
+}
+.form input {
+  display: inline-block;
+  border-radius: 10px;
+  border: none; 
+  width: 220px;
+  height: 40px;
+  background: #dddddd;
+  text-align: center;
+  margin: 10px 10px;
+}
+.form .btn-agregarComprador {
+  margin: 0 20px;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border:none;
+  background: #0089BA;
+  color: #ffffff;
+}
+
+.form .btn-agregarComprador:hover{ 
+  background: #00C9A7;
+  font-size: 20px;
+}
+
+/* VENDEDORES */
+
+.titulo-vendedor {
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  padding: 40px 0px;
+  letter-spacing: 10px;
+  font-size: 50px;
+  color: #296073;
+}
+
+hr {
+  margin: 20px 0;
+  border: 1px solid #008E9B;
+}
+
+.btn-addVendedores{
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
+  background: #0089BA;
+  color: #ffffff;
+  font-size: 20px;
+}
+.btn-addVendedores:hover {
+  background: #00C9A7;
+}
 
 .form.form-active {
   display: none;
