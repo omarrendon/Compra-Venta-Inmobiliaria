@@ -41,3 +41,44 @@ document.querySelector('#btn-addVendedores').addEventListener('click', () => {
   formVendedor.classList.toggle("formVendedor-active")
 })
 
+// MODAL ACCIONES
+const modalCompras = document.getElementById('myModal');
+const btnCompras = document.getElementById('btn-compraVentas-Compras');
+const spanCompras = document.getElementsByClassName("close")[0];
+
+const modalVenta = document.getElementById('myModalVenta');
+const span = document.getElementsByClassName("close")[1];
+const btnVentas = document.getElementById('btn-compraVentas-Ventas');
+
+
+// Cuando se hace click en el boton (COMPRAS) para abrir el modal 
+btnCompras.onclick = function ( ) {
+  modalCompras.style.display = "block";
+}
+// Cuando se hace click en el boton X para cerrar el modal
+spanCompras.onclick = function ( ) {
+  modalCompras.style.display = "none";
+}
+// Cuando se hace click fuera del modal se cierra 
+// window.onclick = function(event) {
+//   if (event.target == modalCompras) {
+//     modalCompras.style.display = "none";
+//   }
+// }
+// Cuando se hace click en el boton (VENTAS) para abrir el modal 
+btnVentas.onclick = function ( ) {
+  modalVenta.style.display = "block"
+}
+// Cuando se hace click fuera del modal se cierra 
+// window.onclick = function(event) {
+//   if (event.target == modalVenta) {
+//     modalVenta.style.display = "none";
+//   }
+// }
+// Cuando se hace click en el boton X para cerrar el modal
+span.onclick = function ( ) {
+  modalVenta.style.display = "none";
+}
+
+
+
