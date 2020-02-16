@@ -1,3 +1,11 @@
+<?php
+$servidor = "localhost";
+$nombreUsuario = "root";
+$password = "";
+$db = 'compra-venta';
+
+$conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,7 +129,7 @@
 
                 <button class="btn-addVendedores" id="btn-addVendedores">Agregar Nuevo</button>
 
-                <form action="index.php" class="formVendedor formVendedor-active" id="formVendedor" method="POST">
+                <form action="vendedores.php" class="formVendedor formVendedor-active" id="formVendedor" method="POST">
                     <input type="text" placeholder="Nombre(s)" id="nombreVendedor" name="nombreVendedor">
                     <input type="text" placeholder="Apellidos" id="apellidoVendedor" name="apellidoVendedor">
                     <input type="email" placeholder="Email" id="emailVendedor" name="emailVendedor">
@@ -136,13 +144,24 @@
                         <th>Email</th>
                         <th>Telefono</th>
                     </tr>
-                    <tr>
-                        <td>Omar</td>
-                        <td>Cruz Rendón</td>
-                        <td>omarcr.96@gmail.com</td>
-                        <td>9514082455</td>
-                    </tr>
+                    <?php
+                        $sql = "SELECT * from vendedores";
+                        $results = mysqli_query($conexion, $sql);
+
+                        while($mostrar = mysqli_fetch_array($results)) {
+                            ?>
+                            <tr>
+                                <td><?php echo$mostrar['nombre'] ?></td>
+                                <td><?php echo$mostrar['apellidos'] ?></td>
+                                <td><?php echo$mostrar['correo'] ?></td>
+                                <td><?php echo$mostrar['telefono'] ?></td>
+                            </tr>
+                        
+                            <?php
+                        }
+                    ?>
                 </table>
+                <hr>
             </div>
         </main>
     </div>
@@ -151,43 +170,6 @@
 </body>
 
 </html>
-
 <?php
-$servidor = "localhost";
-$nombreUsuario = "root";
-$password = "";
-$db = 'compra-venta';
 
-$conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
-
-if ($conexion->connect_error) {
-    die("conexion fallida" . $conexion->connection_error);
-}
-
-if (isset($_POST['btn-agregarVendedor'])) {
-    if (
-        strlen($_POST['nombreVendedor']) >= 1 && strlen($_POST['apellidoVendedor']) >= 1 &&
-        strlen($_POST['emailVendedor']) >= 1 && strlen($_POST['telefonoVendedor']) >= 1
-    ) {
-        $nombreVendedor = $_POST['nombreVendedor'];
-        $apellidoVendedor = $_POST['apellidoVendedor'];
-        $emailVendedor = $_POST['emailVendedor'];
-        $telefonoVendedor = $_POST['telefonoVendedor'];
-
-        $sql = "INSERT INTO vendedores(nombre, apellidos, correo, telefono) 
-                VALUES('$nombreVendedor', '$apellidoVendedor', '$emailVendedor', '$telefonoVendedor')";
-
-        if ($conexion->query($sql) === true) {
-            echo 'DATOS INSERTADOS CORRECTAMENTE';
-        } else {
-            die("Error al insertar datos: " . $conexion->error);
-        }
-
-        $conexion->close();
-    } else {
-        ?>
-            <p>¡Por favor complete los campos!</p>
-        <?php
-    }
-} 
 ?>
