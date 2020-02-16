@@ -3,6 +3,7 @@ const contenedor = document.querySelector("#container");
 const form = document.getElementById('form');
 const compradores = document.getElementById('compradores');
 const vendedores = document.getElementById('vendedores');
+const compraVenta = document.getElementById('compraVenta');
 const formVendedor = document.getElementById('formVendedor');
 
 // TAMAÑO DE PANTALLA
@@ -39,6 +40,11 @@ document.querySelector('#btn-vendedores').addEventListener('click', () => {
 // formaulario vendedores
 document.querySelector('#btn-addVendedores').addEventListener('click', () => {
   formVendedor.classList.toggle("formVendedor-active")
+})
+
+//menu Compra Venta
+document.querySelector('#btn-compraVenta').addEventListener('click', () => {
+    compraVenta.classList.toggle("compraVenta-active")
 })
 
 // MODAL ACCIONES

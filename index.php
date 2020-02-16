@@ -74,7 +74,7 @@
                         <button class="btn-compraVentas" id="btn-compraVentas-Ventas">Ver</button>
                     </div>
                 </div>
-                
+
                 <!-- Modal Venta-->
                 <div id="myModalVenta" class="modal">
                     <!-- Modal contenido -->
@@ -143,7 +143,7 @@
                         <td>9514082455</td>
                     </tr>
                 </table>
-            </div> 
+            </div>
         </main>
     </div>
     <script src="https://kit.fontawesome.com/80ea51dd3a.js" crossorigin="anonymous"></script>
@@ -153,44 +153,41 @@
 </html>
 
 <?php
-    $servidor = "localhost";
-    $nombreUsuario = "root";
-    $password = "";
-    $db = 'compra-venta';
+$servidor = "localhost";
+$nombreUsuario = "root";
+$password = "";
+$db = 'compra-venta';
 
-    $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
+$conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
 
-    if($conexion -> connect_error) {
-        die("conexion fallida" . $conexion-> connection_error);
-    }
+if ($conexion->connect_error) {
+    die("conexion fallida" . $conexion->connection_error);
+}
 
-    if(isset($_POST['btn-agregarVendedor']) {
-        if(strlen($_POST['nombreVendedor']) >= 1 && strlen($_POST['nombreVendedor']) >= 1 && strlen($_POST['nombreVendedor']) >= 1)
-    })
-
-    if(isset($_POST['nombreVendedor'])) {
+if (isset($_POST['btn-agregarVendedor'])) {
+    if (
+        strlen($_POST['nombreVendedor']) >= 1 && strlen($_POST['apellidoVendedor']) >= 1 &&
+        strlen($_POST['emailVendedor']) >= 1 && strlen($_POST['telefonoVendedor']) >= 1
+    ) {
         $nombreVendedor = $_POST['nombreVendedor'];
-        echo $nombreVendedor;
-
         $apellidoVendedor = $_POST['apellidoVendedor'];
-        echo $apellidoVendedor;
-
         $emailVendedor = $_POST['emailVendedor'];
-        echo $emailVendedor;
-
         $telefonoVendedor = $_POST['telefonoVendedor'];
-        echo $telefonoVendedor;
 
         $sql = "INSERT INTO vendedores(nombre, apellidos, correo, telefono) 
                 VALUES('$nombreVendedor', '$apellidoVendedor', '$emailVendedor', '$telefonoVendedor')";
-        
-        if($conexion->query($sql) === true){
+
+        if ($conexion->query($sql) === true) {
             echo 'DATOS INSERTADOS CORRECTAMENTE';
-        }else{
+        } else {
             die("Error al insertar datos: " . $conexion->error);
         }
 
         $conexion->close();
+    } else {
+        ?>
+            <p>¡Por favor complete los campos!</p>
+        <?php
     }
-
+} 
 ?>

@@ -1,375 +1,379 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-a {
-  text-decoration: none;
-  color: #ffffff;
-}
-.container {
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(90px, 90px) auto;
-  grid-template-rows: 80px auto;
-  grid-template-areas: "header  header"
-                        "menu   contenido";
-  transition: all .3s ease;
-}
-.container.active{
-  grid-template-columns: minmax(330px, 18%);
-}
-/* HEADER */
-.header {
-  grid-area: header;
-  background: #2C73D2;
-  color: #ffffff;
-  padding: 0 50px;
-  display: grid;
-  grid-template-columns: auto 1fr auto ;
-  align-items: center;
-  justify-content: space-between;
-  grid-gap: 30px;
-  grid-template-areas: "menu  logo  cerrar-sesion";
-}
-/* BOTÓN MENU */
-.header .contenedor-logo {
-  grid-area: menu;
-  display: flex;
-  align-items: center;
-}
-.header .contenedor-logo .btn-menu {
-  border: none;
-  padding: 10px;
-  background: none;
-  cursor: pointer;
-  font-size: 30px;
-  border-radius: 20px;
-  width: 50px;
-  height: 50px;
-  margin-right: 80px;
-  color: #ffffff;
-}
-.contenedor-logo .btn-menu:hover {
-  background: #ffffff;
-  color: #000000;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(90px, 90px) auto;
+    grid-template-rows: 80px auto;
+    grid-template-areas: "header  header"
+                          "menu   contenido";
+    transition: all .3s ease;
+  }
+  .container.active{
+    grid-template-columns: minmax(330px, 18%);
+  }
+  /* HEADER */
+  .header {
+    grid-area: header;
+    background: #2C73D2;
+    color: #ffffff;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: auto 1fr auto ;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 30px;
+    grid-template-areas: "menu  logo  cerrar-sesion";
+  }
+  /* BOTÓN MENU */
+  .header .contenedor-logo {
+    grid-area: menu;
+    display: flex;
+    align-items: center;
+  }
+  .header .contenedor-logo .btn-menu {
+    border: none;
+    padding: 10px;
+    background: none;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    margin-right: 80px;
+    color: #ffffff;
+  }
+  .contenedor-logo .btn-menu:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  /* LOGOTIPO  */
+  .header .logo{
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+  }
+  .header .logo .btn-logo {
+    border: none;
+    padding: 10px ;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 30px;
+    position: relative;
+    top: -2px;
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+  }
+  .header .logo .logo-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 45px;
+    position: relative;
+    top: -2px;
+    letter-spacing: 10px;
+  }
+  
+  
+  /* BOTÓN CERRAR SESION */
+  .header .cerrar-sesion{
+    grid-area: cerrar-sesion;
+    display: flex ;
+    align-items: center;
+  }
+  .header .cerrar-sesion .btn-close {
+    border: none;
+    padding: 10px ;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 30px;
+    position: relative;
+    top: -4px;
+    width: 50px;
+    height: 50px;
+    margin-right: 60px;
+    border-radius: 20px;
+  }
+  .header .cerrar-sesion .btn-close:hover {
+    background: #D83121;
+  }
+  /* MENU LATERAL */
+  
+  .menu {
+    grid-area: menu;
+    background: #008E9B;
+    overflow: hidden;
+  }
+  .menu a {
+    display: block;
+    padding: 15px 35px;
+    color: #ffffff;
+    min-width: 800px;
+  }
+  .menu a:hover {
+    background: #e5e5e5;
+    color: #000000;
+  }
+  .menu .fas {
+    margin-right: 35px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .menu hr {
+    margin: 20px 0;
+    border: 1px solid #dfdfdf;
+  }
+  
+  /* COMPRADORES */
+  /* TABLAS COMPRADORES */
+  
+  .compradores {
+    display: grid;
+  }
+  .compradores.compradores-active {
+    display: none;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin-left: 150px;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  /* */
+  .titulo-compradores {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    padding: 40px 0px;
+    letter-spacing: 10px;
+    font-size: 50px;
+    color: #296073;
+  }
+  hr {
+    margin: 20px 0;
+    border: 1px solid #008E9B;
+  }
+  .form.form-active {
+    display: none;
+  }
+  .btn-add{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+    background: #0089BA;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .btn-add:hover {
+    background: #00C9A7;
+  }
+  .form {
+    padding: 50px;
+  }
+  .form input {
+    display: inline-block;
+    border-radius: 10px;
+    border: none; 
+    width: 220px;
+    height: 40px;
+    background: #dddddd;
+    text-align: center;
+    margin: 10px 10px;
+  }
+  .form .btn-agregarComprador {
+    margin: 0 20px;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    background: #0089BA;
+    color: #ffffff;
+  }
+  
+  .form .btn-agregarComprador:hover{ 
+    background: #00C9A7;
+    font-size: 20px;
+  }
+  
+  /* VENDEDORES */
+  
+  .titulo-vendedor {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    padding: 40px 0px;
+    letter-spacing: 10px;
+    font-size: 50px;
+    color: #296073;
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: 1px solid #008E9B;
+  }
+  
+  .btn-addVendedores{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+    background: #0089BA;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .btn-addVendedores:hover {
+    background: #00C9A7;
+  }
+  
+  .formVendedor.formVendedor-active {
+    display: none;
+  }
+  .formVendedor {
+    padding: 50px;
+  }
+  .formVendedor input {
+    display: inline-block;
+    border-radius: 10px;
+    border: none; 
+    width: 220px;
+    height: 40px;
+    background: #dddddd;
+    text-align: center;
+    margin: 10px 10px;
+  }
+  .formVendedor .btn-agregarVendedor {
+    margin: 0 20px;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    background: #0089BA;
+    color: #ffffff;
+  }
+  
+  .formVendedor .btn-agregarVendedor:hover{ 
+    background: #00C9A7;
+    font-size: 20px;
+  }
+  
+  .vendedores.vendedores-active {
+    display: none;
+  }
+  
+  /* COMPRA Y VENTAS */
+  .compraVenta {
+    width: 100%;
+    height: 100%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+  } 
+  .card {
+    width: 300px;
+    height: 400px;
+    background: #0089BA;
+    margin: 100px;
+    border: 1px solid #000000;
+  }
+  .compraLogo {
+    padding-top: 30px;
+    padding-left: 80px;
+    font-size: 130px;
+    color: #ffffff;
+  }
+  .titulo{
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 10px;
+    margin-top: 35px;
+    color: #ffffff;
+  }
+  .btn-compraVentas {
+    width: 110px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin: 50px 100px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .btn-compraVentas:hover {
+    background: #00C9A7;
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-/* LOGOTIPO  */
-.header .logo{
-  grid-area: logo;
-  display: flex;
-  align-items: center;
-}
-.header .logo .btn-logo {
-  border: none;
-  padding: 10px ;
-  background: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 30px;
-  position: relative;
-  top: -2px;
-  width: 50px;
-  height: 50px;
-  margin-right: 40px;
-}
-.header .logo .logo-title {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 45px;
-  position: relative;
-  top: -2px;
-  letter-spacing: 10px;
-}
-
-
-/* BOTÓN CERRAR SESION */
-.header .cerrar-sesion{
-  grid-area: cerrar-sesion;
-  display: flex ;
-  align-items: center;
-}
-.header .cerrar-sesion .btn-close {
-  border: none;
-  padding: 10px ;
-  background: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 30px;
-  position: relative;
-  top: -4px;
-  width: 50px;
-  height: 50px;
-  margin-right: 60px;
-  border-radius: 20px;
-}
-.header .cerrar-sesion .btn-close:hover {
-  background: #D83121;
-}
-/* MENU LATERAL */
-
-.menu {
-  grid-area: menu;
-  background: #008E9B;
-  overflow: hidden;
-}
-.menu a {
-  display: block;
-  padding: 15px 35px;
-  color: #ffffff;
-  min-width: 800px;
-}
-.menu a:hover {
-  background: #e5e5e5;
-  color: #000000;
-}
-.menu .fas {
-  margin-right: 35px;
-  width: 20px;
-  text-align: center;
-}
-
-.menu hr {
-  margin: 20px 0;
-  border: 1px solid #dfdfdf;
-}
-
-/* COMPRADORES */
-/* TABLAS COMPRADORES */
-
-.compradores {
-  display: grid;
-}
-.compradores.compradores-active {
-  display: none;
-}
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 70%;
-  margin-left: 150px;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-/* */
-.titulo-compradores {
-  text-align: center;
-  font-family: 'Bebas Neue', cursive;
-  padding: 40px 0px;
-  letter-spacing: 10px;
-  font-size: 50px;
-  color: #296073;
-}
-hr {
-  margin: 20px 0;
-  border: 1px solid #008E9B;
-}
-.form.form-active {
-  display: none;
-}
-.btn-add{
-  width: 250px;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  margin-left: 150px;
-  background: #0089BA;
-  color: #ffffff;
-  font-size: 20px;
-}
-.btn-add:hover {
-  background: #00C9A7;
-}
-.form {
-  padding: 50px;
-}
-.form input {
-  display: inline-block;
-  border-radius: 10px;
-  border: none; 
-  width: 220px;
-  height: 40px;
-  background: #dddddd;
-  text-align: center;
-  margin: 10px 10px;
-}
-.form .btn-agregarComprador {
-  margin: 0 20px;
-  width: 120px;
-  height: 40px;
-  border-radius: 10px;
-  border:none;
-  background: #0089BA;
-  color: #ffffff;
-}
-
-.form .btn-agregarComprador:hover{ 
-  background: #00C9A7;
-  font-size: 20px;
-}
-
-/* VENDEDORES */
-
-.titulo-vendedor {
-  text-align: center;
-  font-family: 'Bebas Neue', cursive;
-  padding: 40px 0px;
-  letter-spacing: 10px;
-  font-size: 50px;
-  color: #296073;
-}
-
-hr {
-  margin: 20px 0;
-  border: 1px solid #008E9B;
-}
-
-.btn-addVendedores{
-  width: 250px;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  margin-left: 150px;
-  background: #0089BA;
-  color: #ffffff;
-  font-size: 20px;
-}
-.btn-addVendedores:hover {
-  background: #00C9A7;
-}
-
-.formVendedor.formVendedor-active {
-  display: none;
-}
-.formVendedor {
-  padding: 50px;
-}
-.formVendedor input {
-  display: inline-block;
-  border-radius: 10px;
-  border: none; 
-  width: 220px;
-  height: 40px;
-  background: #dddddd;
-  text-align: center;
-  margin: 10px 10px;
-}
-.formVendedor .btn-agregarVendedor {
-  margin: 0 20px;
-  width: 120px;
-  height: 40px;
-  border-radius: 10px;
-  border:none;
-  background: #0089BA;
-  color: #ffffff;
-}
-
-.formVendedor .btn-agregarVendedor:hover{ 
-  background: #00C9A7;
-  font-size: 20px;
-}
-
-.vendedores.vendedores-active {
-  display: none;
-}
-
-/* COMPRA Y VENTAS */
-.compraVenta {
-  width: 100%;
-  height: 100%;
-  display: grid; 
-  grid-template-columns: 1fr 1fr;
-} 
-.card {
-  width: 300px;
-  height: 400px;
-  background: #0089BA;
-  margin: 100px;
-  border: 1px solid #000000;
-}
-.compraLogo {
-  padding-top: 30px;
-  padding-left: 80px;
-  font-size: 130px;
-  color: #ffffff;
-}
-.titulo{
-  text-align: center;
-  font-size: 45px;
-  font-family: 'Bebas Neue', cursive;
-  letter-spacing: 10px;
-  margin-top: 35px;
-  color: #ffffff;
-}
-.btn-compraVentas {
-  width: 110px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  margin: 50px 100px;
-  border: none;
-  border-radius: 10px;
-  font-size: 15px;
-  cursor: pointer;
-}
-.btn-compraVentas:hover {
-  background: #00C9A7;
-  font-size: 20px;
-  color: #ffffff;
-}
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .compraVenta.compraVenta-active {
+      display: none;
+  }
