@@ -46,6 +46,7 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
             <hr>
             <a href="#"><i class="fas fa-money-check-alt"></i>Pagos Mensuales</a>
         </nav>
+        
         <main class="main">
 
             <div class="compraVenta compraVenta-active" id="compraVenta">
@@ -98,12 +99,12 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                 <hr>
                 <button class="btn-add" id="btn-add">Agregar Nuevo</button>
 
-                <form action="" class="form form-active" id="form">
-                    <input type="text" placeholder="Nombre(s)" id="nombre">
-                    <input type="text" placeholder="Apellidos" id="apellido">
-                    <input type="email" placeholder="Email" id="email">
-                    <input type="text" placeholder="Telefeno" id="telefono">
-                    <button type="submit" id="btn-agregarComprador" class="btn-agregarComprador">Guardar</button>
+                <form action="compradores.php" class="form form-active" id="form" method="POST">
+                    <input type="text" placeholder="Nombre(s)" id="nombre" name="nombre">
+                    <input type="text" placeholder="Apellidos" id="apellido" name="apellido">
+                    <input type="email" placeholder="Email" id="email" name="email">
+                    <input type="text" placeholder="Telefeno" id="telefono" name="telefono">
+                    <button type="submit" id="btn-agregarComprador" name="btn-agregarComprador" class="btn-agregarComprador">Guardar</button>
                 </form>
                 <hr>
                 <table>
@@ -113,20 +114,29 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                         <th>Email</th>
                         <th>Telefono</th>
                     </tr>
-                    <tr>
-                        <td>Omar</td>
-                        <td>Cruz Rendón</td>
-                        <td>omarcr.96@gmail.com</td>
-                        <td>9514082455</td>
-                    </tr>
+                    <?php
+                    $sqlCompradores = "SELECT * from compradores";
+                    $resultsCompradores = mysqli_query($conexion, $sqlCompradores);
+
+                    while ($mostrarCompradores = mysqli_fetch_array($resultsCompradores)) {
+                    ?>
+                        <tr>
+                            <td><?php echo $mostrarCompradores['nombre'] ?></td>
+                            <td><?php echo $mostrarCompradores['apellidos'] ?></td>
+                            <td><?php echo $mostrarCompradores['email'] ?></td>
+                            <td><?php echo $mostrarCompradores['telefono'] ?></td>
+                        </tr>
+
+                    <?php
+                    }
+                    ?>
                 </table>
+                <hr>
             </div>
 
             <div class="vendedores vendedores-active" id="vendedores">
                 <h1 class="titulo-vendedor">VENDEDORES </h1>
-
                 <hr>
-
                 <button class="btn-addVendedores" id="btn-addVendedores">Agregar Nuevo</button>
 
                 <form action="vendedores.php" class="formVendedor formVendedor-active" id="formVendedor" method="POST">
@@ -145,20 +155,20 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                         <th>Telefono</th>
                     </tr>
                     <?php
-                        $sql = "SELECT * from vendedores";
-                        $results = mysqli_query($conexion, $sql);
+                    $sql = "SELECT * from vendedores";
+                    $results = mysqli_query($conexion, $sql);
 
-                        while($mostrar = mysqli_fetch_array($results)) {
-                            ?>
-                            <tr>
-                                <td><?php echo$mostrar['nombre'] ?></td>
-                                <td><?php echo$mostrar['apellidos'] ?></td>
-                                <td><?php echo$mostrar['correo'] ?></td>
-                                <td><?php echo$mostrar['telefono'] ?></td>
-                            </tr>
-                        
-                            <?php
-                        }
+                    while ($mostrar = mysqli_fetch_array($results)) {
+                    ?>
+                        <tr>
+                            <td><?php echo $mostrar['nombre'] ?></td>
+                            <td><?php echo $mostrar['apellidos'] ?></td>
+                            <td><?php echo $mostrar['correo'] ?></td>
+                            <td><?php echo $mostrar['telefono'] ?></td>
+                        </tr>
+
+                    <?php
+                    }
                     ?>
                 </table>
                 <hr>
