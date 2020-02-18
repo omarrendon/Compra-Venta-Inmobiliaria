@@ -296,7 +296,7 @@
     width: 100%;
     height: 100%;
     display: grid; 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 400px 500px;
   } 
   .card {
     width: 300px;
@@ -357,23 +357,64 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    /* height: auto; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 90px repeat(5, 1fr);
+    grid-template-areas:  "titulo  close"
+                          "image  content"
+                          "image  content"
+                          "image  content"
+                          "image  content"
+                          "image  content";
   }
   
+  .imgCasaCompra {
+    grid-area: image;
+  }
+
+  .imgCasaCompra img{
+    width: 380px;
+    height: 250px;
+  }
+  .descriptionCompra {
+    grid-area: content;
+    display: block;
+    
+  }
+  .parrafo {
+    font-size: 20px;
+    height: 250px;
+    margin: 40px;
+  }
+
+
   /* The Close Button */
   .close {
+    grid-area: close;
     color: #aaaaaa;
     float: right;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
+    /* margin-bottom: -10px; */
+    margin-left: 350px;
   }
   
   .close:hover,
   .close:focus {
-    color: #000;
+    color: #D83121;
     text-decoration: none;
     cursor: pointer;
   }
 
+  .tituloCompras {
+    grid-area: titulo;
+    color: #000;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 12px;
+    margin-left: 20%;
+  }
   .compraVenta.compraVenta-active {
       display: none;
   }

@@ -46,7 +46,7 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
             <hr>
             <a href="#"><i class="fas fa-money-check-alt"></i>Pagos Mensuales</a>
         </nav>
-        
+
         <main class="main">
 
             <div class="compraVenta compraVenta-active" id="compraVenta">
@@ -68,7 +68,104 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                     <!-- Modal contenido -->
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                        <p>Some text in the Modal..</p>
+                        <div class="tituloCompras">
+                            COMPRAS
+                        </div>
+
+                        <div class="imgCasaCompra">
+                            <img src="./images/casa1.jpg" alt="casa 1" srcset="">
+                            <hr>
+                            <img src="./images/casa2.jpg" alt="casa 1" srcset="">
+                            <hr>
+                            <img src="./images/casa3.jpg" alt="casa 1" srcset="">
+                            <hr>
+                            <img src="./images/casa4.jpg" alt="casa 1" srcset="">
+                            <hr>
+                            <img src="./images/casa5.jpg" alt="casa 1" srcset="">
+                        </div>
+
+                        <div class="descriptionCompra">
+                            <p class="parrafo">
+                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
+                                <br>
+                                <strong>Telefono :</strong> 9514082442
+                                <br>
+                                <strong>Correo Eléctronico :</strong> eric@gmail.com
+                                <br>
+                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
+                                <br>
+                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
+                                <br>
+                                <strong>Municipio :</strong> Oaxaca De Juárez
+                                <br>
+                                <strong>Esatado :</strong> Oaxaca
+                            </p>
+
+                            <p class="parrafo">
+                                <strong>Antiguo dueño :</strong> Omar Rendón
+                                <br>
+                                <strong>Telefono :</strong> 9514082442
+                                <br>
+                                <strong>Correo Eléctronico :</strong> omar@gmail.com
+                                <br>
+                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
+                                <br>
+                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
+                                <br>
+                                <strong>Municipio :</strong> Oaxaca De Juárez
+                                <br>
+                                <strong>Esatado :</strong> Oaxaca
+                            </p>
+
+                            <p class="parrafo">
+                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
+                                <br>
+                                <strong>Telefono :</strong> 9514082442
+                                <br>
+                                <strong>Correo Eléctronico :</strong> eric@gmail.com
+                                <br>
+                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
+                                <br>
+                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
+                                <br>
+                                <strong>Municipio :</strong> Oaxaca De Juárez
+                                <br>
+                                <strong>Esatado :</strong> Oaxaca
+                            </p>
+
+                            <p class="parrafo">
+                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
+                                <br>
+                                <strong>Telefono :</strong> 9514082442
+                                <br>
+                                <strong>Correo Eléctronico :</strong> eric@gmail.com
+                                <br>
+                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
+                                <br>
+                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
+                                <br>
+                                <strong>Municipio :</strong> Oaxaca De Juárez
+                                <br>
+                                <strong>Esatado :</strong> Oaxaca
+                            </p>
+
+                            <p class="parrafo">
+                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
+                                <br>
+                                <strong>Telefono :</strong> 9514082442
+                                <br>
+                                <strong>Correo Eléctronico :</strong> eric@gmail.com
+                                <br>
+                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
+                                <br>
+                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
+                                <br>
+                                <strong>Municipio :</strong> Oaxaca De Juárez
+                                <br>
+                                <strong>Esatado :</strong> Oaxaca
+                            </p>
+                        </div>
+
                     </div>
                 </div>
 
