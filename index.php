@@ -380,7 +380,7 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                             <td><?php echo $mostrar['cp'] ?></td>
                             <td><?php echo $mostrar['municipio'] ?></td>
                             <td><?php echo $mostrar['estado'] ?></td>
-                            <td><?php echo $mostrar['foto'] ?></td>
+                            <td><?php echo '<img src="'.$mostrar['foto'].'" width="100" heigth="100">'?></td>
                         </tr>
 
                     <?php
