@@ -47,7 +47,7 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
             <a href="#"><i class="fas fa-money-check-alt"></i>Pagos Mensuales</a>
         </nav>
 
-        <main class="main">
+        <main class="main" id="main">
 
             <div class="compraVenta compraVenta-active" id="compraVenta">
 
@@ -331,11 +331,21 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                 <hr>
                 <button class="btn-addVendedores" id="btn-addVendedores">Agregar Nuevo</button>
 
-                <form action="vendedores.php" class="formVendedor formVendedor-active" id="formVendedor" method="POST">
+                <form action="vendedores.php" class="formVendedor formVendedor-active" id="formVendedor" method="POST" enctype="multipart/form-data">
                     <input type="text" placeholder="Nombre(s)" id="nombreVendedor" name="nombreVendedor">
                     <input type="text" placeholder="Apellidos" id="apellidoVendedor" name="apellidoVendedor">
                     <input type="email" placeholder="Email" id="emailVendedor" name="emailVendedor">
                     <input type="text" placeholder="Telefeno" id="telefonoVendedor" name="telefonoVendedor">
+
+                    <label for="">DATOS DE LA PROPIEDAD</label>
+                    <input type="text" placeholder="Calle" id="calleVendedor" name="calleVendedor">
+                    <input type="text" placeholder="Número" id="numeroVendedor" name="numeroVendedor">
+                    <input type="text" placeholder="Colonia" id="coloniaVendedor" name="coloniaVendedor">
+                    <input type="text" placeholder="Código Postal" id="cpVendedor" name="cpVendedor">
+                    <input type="text" placeholder="Municipio" id="municipioVendedor" name="municipioVendedor">
+                    <input type="text" placeholder="Estado" id="estadoVendedor" name="estadoVendedor">
+                    <label for="">IMAGEN DE LA PROPIEDAD</label>
+                    <input type="file" id="fotoVendedor" name="fotoVendedor">
                     <button type="submit" id="btn-agregarVendedor" name="btn-agregarVendedor" class="btn-agregarVendedor">Guardar</button>
                 </form>
                 <hr>
@@ -345,6 +355,13 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                         <th>Apellidos</th>
                         <th>Email</th>
                         <th>Telefono</th>
+                        <th>Calle</th>
+                        <th>Número</th>
+                        <th>Colonia</th>
+                        <th>CP</th>
+                        <th>Municipio</th>
+                        <th>Estado</th>
+                        <th>Foto</th>
                     </tr>
                     <?php
                     $sql = "SELECT * from vendedores";
@@ -357,6 +374,13 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                             <td><?php echo $mostrar['apellidos'] ?></td>
                             <td><?php echo $mostrar['correo'] ?></td>
                             <td><?php echo $mostrar['telefono'] ?></td>
+                            <td><?php echo $mostrar['calle'] ?></td>
+                            <td><?php echo $mostrar['numero'] ?></td>
+                            <td><?php echo $mostrar['colonia'] ?></td>
+                            <td><?php echo $mostrar['cp'] ?></td>
+                            <td><?php echo $mostrar['municipio'] ?></td>
+                            <td><?php echo $mostrar['estado'] ?></td>
+                            <td><?php echo $mostrar['foto'] ?></td>
                         </tr>
 
                     <?php

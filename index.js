@@ -5,6 +5,7 @@ const compradores = document.getElementById('compradores');
 const vendedores = document.getElementById('vendedores');
 const compraVenta = document.getElementById('compraVenta');
 const formVendedor = document.getElementById('formVendedor');
+const main = document.getElementById('main');
 
 // TAMAÑO DE PANTALLA
 const comprobarAncho = () => {
@@ -29,17 +30,19 @@ document.querySelector("#btn-menu").addEventListener("click", () => {
 document.querySelector("#btn-add").addEventListener("click", () => {
   form.classList.toggle("form-active");
 });
+// formaulario vendedores
+document.querySelector('#btn-addVendedores').addEventListener('click', () => {
+  formVendedor.classList.toggle("formVsendedor-active")
+})
+
 // menu compradores
 document.querySelector('#btn-compradores').addEventListener("click", () => {
-  compradores.classList.toggle("compradores-active")
+  compradores.classList.toggle("compradores-active");
+ 
 })
 // menu vendedores
 document.querySelector('#btn-vendedores').addEventListener('click', () => {
   vendedores.classList.toggle("vendedores-active")
-})
-// formaulario vendedores
-document.querySelector('#btn-addVendedores').addEventListener('click', () => {
-  formVendedor.classList.toggle("formVendedor-active")
 })
 
 //menu Compra Venta
