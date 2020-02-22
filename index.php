@@ -344,6 +344,9 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                     <input type="text" placeholder="Código Postal" id="cpVendedor" name="cpVendedor">
                     <input type="text" placeholder="Municipio" id="municipioVendedor" name="municipioVendedor">
                     <input type="text" placeholder="Estado" id="estadoVendedor" name="estadoVendedor">
+                    <input type="text" placeholder="Costo Propiedad (MXN)" id="costoVendedor" name="costoVendedor">
+                    <label for="">FECHA DE VENTA</label>
+                    <input type="date" name="fechaVendedor" id="fechaVendedor">
                     <label for="">IMAGEN DE LA PROPIEDAD</label>
                     <input type="file" id="fotoVendedor" name="fotoVendedor">
                     <button type="submit" id="btn-agregarVendedor" name="btn-agregarVendedor" class="btn-agregarVendedor">Guardar</button>
@@ -361,6 +364,8 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                         <th>CP</th>
                         <th>Municipio</th>
                         <th>Estado</th>
+                        <th>Costo</th>
+                        <th>Fecha</th>
                         <th>Foto</th>
                     </tr>
                     <?php
@@ -380,6 +385,8 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                             <td><?php echo $mostrar['cp'] ?></td>
                             <td><?php echo $mostrar['municipio'] ?></td>
                             <td><?php echo $mostrar['estado'] ?></td>
+                            <td>$<?php echo $mostrar['precio'] ?></td>
+                            <td><?php echo $mostrar['fecha'] ?></td>
                             <td><?php echo '<img src="'.$mostrar['foto'].'" width="100" heigth="100">'?></td>
                         </tr>
 

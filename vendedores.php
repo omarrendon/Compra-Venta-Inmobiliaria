@@ -25,18 +25,22 @@ if (isset($_POST['btn-agregarVendedor'])) {
         $cpVendedor = $_POST['cpVendedor'];
         $municipioVendedor = $_POST['municipioVendedor'];
         $estadoVendedor = $_POST['estadoVendedor'];
-        // $nomFotoVendedor = $_POST['nombreVendedor'];
         $fotoVendedor = $_FILES['fotoVendedor']['name'];
         $ruta = $_FILES['fotoVendedor']['tmp_name'];
         $destino =  "images/".$fotoVendedor;
         copy($ruta,$destino);
+        
+        $costoVendedor = $_POST['costoVendedor'];
 
+        $fechaVendedor = $_POST['fechaVendedor'];
+        $fecha = strtotime($fechaVendedor);
+        $fecha = date('Y-m-d', $fecha);
 
         $sql = "INSERT INTO vendedores(nombre, apellidos, correo, telefono, calle, numero, colonia, cp,
-                                        municipio, estado, foto) 
+                                        municipio, estado, foto, precio, fecha) 
                 VALUES('$nombreVendedor', '$apellidoVendedor', '$emailVendedor', '$telefonoVendedor',
                         '$calleVendedor', '$numeroVendedor', '$coloniaVendedor', '$cpVendedor', 
-                        '$municipioVendedor', '$estadoVendedor', '$destino')";
+                        '$municipioVendedor', '$estadoVendedor', '$destino', '$costoVendedor', '$fecha')";
 
         if ($conexion->query($sql) === true) {
             // echo 'index.html';
