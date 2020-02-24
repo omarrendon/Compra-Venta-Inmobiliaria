@@ -75,40 +75,40 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                         </div>
 
                         <div class="imgCasaCompra">
-                            <!-- <img src="./images/casa1.jpg" alt="casa 1" srcset="">
-                            <hr> -->
                             <?php
                             $sqlImage = "SELECT foto from vendedores";
                             $resultImage = mysqli_query($conexion, $sqlImage);
                             while ($mostarImage = mysqli_fetch_array($resultImage)) {
                             ?>
-                                <?php echo '<img src="' . $mostarImage['foto'] . '"' ?>
+                                <?php echo '<img src="' . $mostarImage['foto'] . '">' ?>
+                                <?php echo '<hr>' ?>
                             <?php
+                            
                             }
                             ?>
                         </div>
 
                         <div class="descriptionCompra">
                             <?php
-                            $sqlText = "SELECT * from vendedores";
-                            $resultText = mysqli_query($conexion, $sqlText);
+                            $sqlTextCompra = "SELECT * from vendedores";
+                            $resultText = mysqli_query($conexion, $sqlTextCompra);
                             while ($mostrarText = mysqli_fetch_array($resultText)) {
                             ?>
                                 <p class="parrafo">
-                                    <strong>Antiguo dueño :</strong> <?php echo $mostrarText['nombre'] ?> <?php echo $mostrarText['apellidos'] ?>
-                                    <br>
-                                    <strong>Telefono :</strong> <?php echo $mostrarText['telefono'] ?>
-                                    <br>
-                                    <strong>Correo Eléctronico :</strong> <?php echo $mostrarText['correo'] ?>
-                                    <br>
-                                    <strong>Calle :</strong> <?php echo $mostrarText['calle'] ?> <strong>Número :</strong> <?php echo $mostrarText['numero'] ?>
-                                    <br>
-                                    <strong>Colonia :</strong> <?php echo $mostrarText['colonia'] ?> <strong>Código Postal:</strong> <?php echo $mostrarText['cp'] ?>
-                                    <br>
-                                    <strong>Municipio :</strong> <?php echo $mostrarText['municipio'] ?>
-                                    <br>
-                                    <strong>Esatado :</strong> <?php echo $mostrarText['estado'] ?>
-                                </p>
+                                <strong>Antiguo dueño :</strong> <?php echo $mostrarText['nombre']?> <?php echo $mostrarText['apellidos']?>
+                                <br>
+                                <strong>Telefono :</strong> <?php echo $mostrarText['telefono']?>
+                                <br>
+                                <strong>Correo Eléctronico :</strong> <?php echo $mostrarText['correo']?>
+                                <br>
+                                <strong>Calle :</strong> <?php echo $mostrarText['calle']?> <strong>Número :</strong> <?php echo $mostrarText['numero']?>
+                                <br>
+                                <strong>Colonia :</strong> <?php echo $mostrarText['colonia']?> <strong>Código Postal:</strong> <?php echo $mostrarText['cp']?>
+                                <br>
+                                <strong>Municipio :</strong> <?php echo $mostrarText['municipio']?> 
+                                <br>
+                                <strong>Esatado :</strong> <?php echo $mostrarText['estado']?>
+                            </p>
                             <?php
                             }
                             ?>
@@ -138,97 +138,38 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                         </div>
 
                         <div class="imgCasaCompra">
-                            <img src="./images/casa3.jpg" alt="casa 1" srcset="">
-                            <hr>
-                            <img src="./images/casa2.jpg" alt="casa 1" srcset="">
-                            <hr>
-                            <img src="./images/casa1.jpg" alt="casa 1" srcset="">
-                            <hr>
-                            <img src="./images/casa4.jpg" alt="casa 1" srcset="">
-                            <hr>
-                            <img src="./images/casa5.jpg" alt="casa 1" srcset="">
+                            <?php
+                            $sqlImageCompra = "SELECT foto from vendedores";
+                            $resultImageCompra = mysqli_query($conexion, $sqlImageCompra);
+                            while ($mostarImageCompra = mysqli_fetch_array($resultImageCompra)) {
+                            ?>
+                                <?php echo '<img src="' . $mostarImageCompra['foto'] . '">' ?>
+                                <?php echo '<hr>' ?>
+                            <?php
+                            }
+                            ?>
                         </div>
 
                         <div class="descriptionCompra">
-                            <p class="parrafo">
-                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
+                            <?php
+                            $sqlTextCompra = "SELECT * from compradores";
+                            $resultTextCompra = mysqli_query($conexion, $sqlTextCompra);
+                            while ($mostrarTextCompra = mysqli_fetch_array($resultTextCompra)) {
+                            ?>
+                                <p class="parrafo">
+                                <strong>Nuevo Propietario :</strong> <?php echo $mostrarTextCompra['nombre']?> <?php echo $mostrarTextCompra['apellidos']?>
                                 <br>
-                                <strong>Telefono :</strong> 9514082442
+                                <strong>Telefono :</strong> <?php echo $mostrarTextCompra['telefono']?>
                                 <br>
-                                <strong>Correo Eléctronico :</strong> eric@gmail.com
+                                <strong>Correo Eléctronico :</strong> <?php echo $mostrarTextCompra['email']?>
                                 <br>
-                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
+                                <strong>Datos de la Propiedad Comprada</strong>
                                 <br>
-                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
-                                <br>
-                                <strong>Municipio :</strong> Oaxaca De Juárez
-                                <br>
-                                <strong>Esatado :</strong> Oaxaca
+                                <?php echo $mostrarTextCompra['casa']?>
                             </p>
-
-                            <p class="parrafo">
-                                <strong>Antiguo dueño :</strong> Omar Rendón
-                                <br>
-                                <strong>Telefono :</strong> 9514082442
-                                <br>
-                                <strong>Correo Eléctronico :</strong> omar@gmail.com
-                                <br>
-                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
-                                <br>
-                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
-                                <br>
-                                <strong>Municipio :</strong> Oaxaca De Juárez
-                                <br>
-                                <strong>Esatado :</strong> Oaxaca
-                            </p>
-
-                            <p class="parrafo">
-                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
-                                <br>
-                                <strong>Telefono :</strong> 9514082442
-                                <br>
-                                <strong>Correo Eléctronico :</strong> eric@gmail.com
-                                <br>
-                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
-                                <br>
-                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
-                                <br>
-                                <strong>Municipio :</strong> Oaxaca De Juárez
-                                <br>
-                                <strong>Esatado :</strong> Oaxaca
-                            </p>
-
-                            <p class="parrafo">
-                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
-                                <br>
-                                <strong>Telefono :</strong> 9514082442
-                                <br>
-                                <strong>Correo Eléctronico :</strong> eric@gmail.com
-                                <br>
-                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
-                                <br>
-                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
-                                <br>
-                                <strong>Municipio :</strong> Oaxaca De Juárez
-                                <br>
-                                <strong>Esatado :</strong> Oaxaca
-                            </p>
-
-                            <p class="parrafo">
-                                <strong>Antiguo dueño :</strong> Eric Jesus Hernandez Romero
-                                <br>
-                                <strong>Telefono :</strong> 9514082442
-                                <br>
-                                <strong>Correo Eléctronico :</strong> eric@gmail.com
-                                <br>
-                                <strong>Calle :</strong> Paynani <strong>Número :</strong> 112
-                                <br>
-                                <strong>Colonia :</strong> Postal <strong>Código Postal:</strong> 68080
-                                <br>
-                                <strong>Municipio :</strong> Oaxaca De Juárez
-                                <br>
-                                <strong>Esatado :</strong> Oaxaca
-                            </p>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -246,11 +187,18 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                     <input type="text" placeholder="Telefeno" id="telefono" name="telefono">
                     <select name="selectCasa" id="selectCasa">
                         <?php
-                        $sqlSelect = "SELECT clave from vendedores";
+                        $sqlSelect = "SELECT calle, numero, colonia, cp, municipio, estado from vendedores";
                         $resultSelect = mysqli_query($conexion, $sqlSelect);
                         while ($mostarSelect = mysqli_fetch_array($resultSelect)) {
                         ?>
-                            <option value="<?php echo $mostarSelect['clave'] ?>"><?php echo $mostarSelect['clave'] ?></option>
+                            <option value="<?php echo $mostarSelect['calle']; echo $mostarSelect['numero']; 
+                                            echo $mostarSelect['colonia']; echo $mostarSelect['cp'];
+                                            echo $mostarSelect['municipio']; echo $mostarSelect['estado']
+                            ?>">
+                                <?php echo 'Calle: '. $mostarSelect['calle']. ' Número:'; echo $mostarSelect['numero']. ' Colonia:'; 
+                                            echo $mostarSelect['colonia'] . ' CP:'; echo $mostarSelect['cp']. ' ';
+                                            echo $mostarSelect['municipio'] . ' '; echo $mostarSelect['estado']?>
+                            </option>
                         <?php
                         }
                         ?>
@@ -292,7 +240,7 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
                 <hr>
                 <button class="btn-addVendedores" id="btn-addVendedores">Agregar Nuevo</button>
 
-                <form action="vendedores.php" class="formVendedor " id="formVendedor" method="POST" enctype="multipart/form-data">
+                <form action="vendedores.php" class="formVendedor" id="formVendedor" method="POST" enctype="multipart/form-data">
                     <input type="text" placeholder="Nombre(s)" id="nombreVendedor" name="nombreVendedor">
                     <input type="text" placeholder="Apellidos" id="apellidoVendedor" name="apellidoVendedor">
                     <input type="email" placeholder="Email" id="emailVendedor" name="emailVendedor">
@@ -364,4 +312,8 @@ $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
     <script src="https://kit.fontawesome.com/80ea51dd3a.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
+<?php
+
+?>
