@@ -3,7 +3,6 @@ $servidor = "localhost";
 $nombreUsuario = "root";
 $password = "";
 $db = 'compra-venta';
-
 $conexion = new mysqli($servidor, $nombreUsuario, $password, $db);
 
 if ($conexion->connect_error) {
@@ -29,18 +28,17 @@ if (isset($_POST['btn-agregarVendedor'])) {
         $ruta = $_FILES['fotoVendedor']['tmp_name'];
         $destino =  "images/".$fotoVendedor;
         copy($ruta,$destino);
-        
         $costoVendedor = $_POST['costoVendedor'];
-
         $fechaVendedor = $_POST['fechaVendedor'];
         $fecha = strtotime($fechaVendedor);
         $fecha = date('Y-m-d', $fecha);
+        $textoClave = $_POST['textoClave'];
 
         $sql = "INSERT INTO vendedores(nombre, apellidos, correo, telefono, calle, numero, colonia, cp,
-                                        municipio, estado, foto, precio, fecha) 
+                                        municipio, estado, foto, precio, fecha, clave) 
                 VALUES('$nombreVendedor', '$apellidoVendedor', '$emailVendedor', '$telefonoVendedor',
                         '$calleVendedor', '$numeroVendedor', '$coloniaVendedor', '$cpVendedor', 
-                        '$municipioVendedor', '$estadoVendedor', '$destino', '$costoVendedor', '$fecha')";
+                        '$municipioVendedor', '$estadoVendedor', '$destino', '$costoVendedor', '$fecha', '$textoClave')";
 
         if ($conexion->query($sql) === true) {
             // echo 'index.html';

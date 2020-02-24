@@ -19,9 +19,10 @@ if (isset($_POST['btn-agregarComprador'])) {
         $apellido = $_POST['apellido'];
         $email = $_POST['email'];
         $telefono = $_POST['telefono'];
+        $select = $_POST['selectCasa'];
 
-        $sql = "INSERT INTO compradores(nombre, apellidos, email, telefono) 
-                VALUES('$nombre', '$apellido', '$email', '$telefono')";
+        $sql = "INSERT INTO compradores(nombre, apellidos, email, telefono, casa) 
+                VALUES('$nombre', '$apellido', '$email', '$telefono', '$select')";
 
         if ($conexion->query($sql) === true) {
             // echo 'index.html';

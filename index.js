@@ -31,8 +31,10 @@ document.querySelector("#btn-add").addEventListener("click", () => {
   form.classList.toggle("form-active");
 });
 // formaulario vendedores
+
+
 document.querySelector('#btn-addVendedores').addEventListener('click', () => {
-  formVendedor.classList.toggle("formVsendedor-active")
+  formVendedor.classList.toggle("formVendedor-active")
 })
 
 // menu compradores
