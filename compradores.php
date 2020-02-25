@@ -31,13 +31,28 @@ if (isset($_POST['btn-agregarComprador'])) {
             die("Error al insertar datos: " . $conexion->error);
         }
 
-        $conexion->close();
     } else {
-        ?>
+        ?>  
             <p>¡Por favor complete los campos!</p>
         <?php
     }
 }
+if(isset($_POST['eliminarCompradores'])) {
+    $id  = $_POST['eliminarCompradores'];
 
+    $sqlEliminar = "DELETE FROM compradores WHERE id = $id";
+
+    if ($conexion->query($sqlEliminar) === true) {
+        // echo 'index.html';
+        header("Location: index.php");
+    } else {
+        die("Error al insertar datos: " . $conexion->error);
+    }
+
+    
+}
+
+
+$conexion->close();
 
 ?>

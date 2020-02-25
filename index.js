@@ -6,7 +6,7 @@ const vendedores = document.getElementById('vendedores');
 const compraVenta = document.getElementById('compraVenta');
 const formVendedor = document.getElementById('formVendedor');
 const main = document.getElementById('main');
-
+const reportes = document.getElementById('reportes');
 // TAMAÑO DE PANTALLA
 const comprobarAncho = () => {
   if (window.innerWidth <= 1024) {
@@ -31,8 +31,6 @@ document.querySelector("#btn-add").addEventListener("click", () => {
   form.classList.toggle("form-active");
 });
 // formaulario vendedores
-
-
 document.querySelector('#btn-addVendedores').addEventListener('click', () => {
   formVendedor.classList.toggle("formVendedor-active")
 })
@@ -50,6 +48,11 @@ document.querySelector('#btn-vendedores').addEventListener('click', () => {
 //menu Compra Venta
 document.querySelector('#btn-compraVenta').addEventListener('click', () => {
     compraVenta.classList.toggle("compraVenta-active")
+})
+
+//menu Reportes Mensuales
+document.querySelector('#btn-reportes').addEventListener('click', () => {
+    reportes.classList.toggle("reportes-active");
 })
 
 // MODAL ACCIONES

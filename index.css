@@ -148,11 +148,20 @@
   .compradores.compradores-active {
     display: none;
   }
+
+  /* .scroll {
+    background: #000;
+    width: 250px;
+    overflow-x: auto;
+    white-space: nowrap;
+  } */
+
   table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 70%;
-    margin-left: 150px;
+    width: 20%;
+    margin-left: 120px;
+    
   }
   
   td, th {
@@ -227,7 +236,7 @@
   /* VENDEDORES */
   
   .titulo-vendedor {
-    text-align: center;
+    margin-left: 350px;
     font-family: 'Bebas Neue', cursive;
     padding: 40px 0px;
     letter-spacing: 10px;
@@ -247,7 +256,7 @@
     border: none;
     display: flex;
     justify-content: center;
-    margin-left: 150px;
+    margin-left: 130px;
     background: #0089BA;
     color: #ffffff;
     font-size: 20px;
@@ -260,13 +269,13 @@
     display: none;
   }
   .formVendedor {
-    padding: 50px;
+    margin-left: 10px;
+    /* display: inline-block; */
   }
   .formVendedor input {
-    display: inline-block;
     border-radius: 10px;
     border: none; 
-    width: 220px;
+    width: 130px;
     height: 40px;
     background: #dddddd;
     text-align: center;
@@ -290,6 +299,8 @@
   .vendedores.vendedores-active {
     display: none;
   }
+
+ 
   
   /* COMPRA Y VENTAS */
   .compraVenta {
@@ -417,4 +428,10 @@
   }
   .compraVenta.compraVenta-active {
       display: none;
+  }
+
+  /* REPORTES MENSUALES */
+
+  .reportes.reportes-active{
+    display: none;
   }
